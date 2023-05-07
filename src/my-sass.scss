@@ -2,28 +2,32 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-  }
-
-  body {
-    font-family: 'Raleway', sans-serif;
-    
-    background-color: red;
-  }
-
-.app {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.wrapper {
-    
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: red;
 }
 
 @mixin text-style($size, $weight) {
     font-size: $size;
     font-weight: $weight;
+}
+
+@mixin flex-box($direction, $align:center, $justify: flex-start){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.app {
+    height: 100vh;
+    @include flex-box(column, center, center);
+}
+
+.wrapper {
+    @include flex-box(column,center)
 }
 
 #text {
@@ -77,4 +81,9 @@
 
 .button:hover {
     cursor: pointer;
+}
+
+.footer {
+    padding-top: 1em;
+    font-size: 0.8em;
 }

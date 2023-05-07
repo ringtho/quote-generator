@@ -25,6 +25,9 @@ const QuoteBox = () => {
                 </div>
 
             </div>
+            <div className="footer">
+                <p>by sringtho</p>
+            </div>
         </div>
     )
 }
