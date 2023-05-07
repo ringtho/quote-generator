@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    
+    background-color: red;
+  }
+
+.app {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    
+}
+
+@mixin text-style($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+#text {
+    @include text-style(1.75em, 500);
+    text-align: center;
+}
+
+#author {
+    @include text-style(1em, 400)
+}
+
+#quote-box {
+    padding: 40px 50px;
+    max-width: 550px;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
