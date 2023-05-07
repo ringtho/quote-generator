@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: red;
 }
 
 @mixin text-style($size, $weight) {
@@ -55,7 +54,6 @@ body {
 }
 
 .button {
-    background-color: red;
     padding: 0.5em;
     font-size: 1.2em;
     border: none;
@@ -81,6 +79,7 @@ body {
 
 .button:hover {
     cursor: pointer;
+    opacity: 90%;
 }
 
 .footer {

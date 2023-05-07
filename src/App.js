@@ -73,12 +73,17 @@ const backgroundStyles = {
             </p>
             <div className="buttons">
                 <a className="button" style={backgroundStyles} 
-                href="https://twitter.com/2" id="tweet-quote">
+                href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="${displayQuote?.quote}" ${displayQuote?.author}`}
+                id="tweet-quote"
+                target="_blank"
+                rel="noreferrer">
                     <i className="fa-brands fa-twitter"></i>
                 </a>
                 <a className="button" id="tumblr-quote" 
-                style={backgroundStyles}  
-                href="https://www.tumblr.com/login?redirect_%3Dtumblr_share_button">
+                style={backgroundStyles}
+                target="_blank"
+                rel="noreferrer"  
+                href="https://www.tumblr.com/">
                     <i className="fa-brands fa-tumblr"></i>
                 </a>
                 <button 
