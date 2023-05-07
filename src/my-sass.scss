@@ -32,7 +32,8 @@
 }
 
 #author {
-    @include text-style(1em, 400)
+    @include text-style(1em, 400);
+    align-self: flex-end;
 }
 
 #quote-box {
@@ -42,5 +43,38 @@
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.5em;
+}
+
+.buttons {
+    display: flex;
+}
+
+.button {
+    background-color: red;
+    padding: 0.5em;
+    font-size: 1.2em;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#tweet-quote,
+#tumblr-quote {
+    width: 40px;
+}
+
+#tweet-quote {
+    margin-right: 5px;
+}
+
+#new-quote {
+    margin-left: auto;
+    font-size: 0.85em;
+    padding: 0.5em 1em;
+}
+
+.button:hover {
+    cursor: pointer;
 }
