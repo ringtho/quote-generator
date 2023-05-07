@@ -51,6 +51,7 @@ body {
 
 .buttons {
     display: flex;
+    gap: 5px;
 }
 
 .button {
@@ -65,10 +66,6 @@ body {
 #tweet-quote,
 #tumblr-quote {
     width: 40px;
-}
-
-#tweet-quote {
-    margin-right: 5px;
 }
 
 #new-quote {
@@ -86,4 +83,14 @@ body {
     padding-top: 1em;
     font-size: 0.8em;
     color: #FFFFFF;
+}
+
+@media screen and (max-width: 576px) {
+    #quote-box {
+        margin: 0 0.8em;
+    }
+
+    #text {
+        @include text-style(1.5em, 500)
+    }
 }
