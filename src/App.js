@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { changeColor } from "./redux/colorReducer"
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeColor } from './redux/colorReducer'
 
-
-function App() {
+function App () {
   const dispatch = useDispatch()
   const color = useSelector(state => state.colorReducer.color)
   const [quotes, setQuotes] = useState([])
@@ -22,74 +21,74 @@ function App() {
     '#BDBB99',
     '#77B1A9',
     '#73A857'
-];
+  ]
 
-useEffect(function (){
+  useEffect(function () {
     const id1 = '5a022b72e96c4c9585c32bf6a75f62d9'
     const id2 = 'e3c6895ce42069f0ee7e991229064f167fe8ccdc'
     const url = `https://gist.githubusercontent.com/camperbot/${id1}/raw/${id2}/quotes.json`
     fetch(url)
-    .then(res => res.json())
-    .then(data => setQuotes(data.quotes))
-}, [])
+      .then(res => res.json())
+      .then(data => setQuotes(data.quotes))
+  }, [])
 
-const getRandomNumber = (arr) => {
+  const getRandomNumber = (arr) => {
     return Math.floor(Math.random() * arr.length)
-}
+  }
 
-const getQuote = () => {
+  const getQuote = () => {
     setQuote(quotes[getRandomNumber(quotes)])
-}
+  }
 
-const getColor = () => {
+  const getColor = () => {
     return colors[getRandomNumber(colors)]
-}
+  }
 
-const handleBtnClick = () => {
+  const handleBtnClick = () => {
     getQuote()
     dispatch(changeColor(getColor()))
-}
+  }
 
-const displayQuote = !quote ? quotes[getRandomNumber(quotes)] : quote
-const colorTheme = !color ? getColor() : color
+  const displayQuote = !quote ? quotes[getRandomNumber(quotes)] : quote
+  const colorTheme = !color ? getColor() : color
 
-const styles = {
+  const styles = {
     color: colorTheme
-}
+  }
 
-const backgroundStyles = {
+  const backgroundStyles = {
     backgroundColor: colorTheme
-}
+  }
 
   return (
-    <div className="app"  style={backgroundStyles}>
+    <div className="app" style={backgroundStyles}>
       <div className="wrapper">
         <div id="quote-box">
-            <p id="text"  style={styles}>
+            <p id="text" style={styles}>
                 <i className="fa fa-quote-left"></i> {displayQuote?.quote}
             </p>
             <p id="author" style={styles}>
                 - {displayQuote?.author}
             </p>
             <div className="buttons">
-                <a className="button" style={backgroundStyles} 
+                <a className="button" style={backgroundStyles}
                 href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text="${displayQuote?.quote}" ${displayQuote?.author}`}
                 id="tweet-quote"
                 target="_blank"
                 rel="noreferrer">
                     <i className="fa-brands fa-twitter"></i>
                 </a>
-                <a className="button" id="tumblr-quote" 
+                <a className="button" id="tumblr-quote"
                 style={backgroundStyles}
                 target="_blank"
-                rel="noreferrer"  
+                rel="noreferrer"
                 href="https://www.tumblr.com/">
                     <i className="fa-brands fa-tumblr"></i>
                 </a>
-                <button 
-                    id="new-quote" 
-                    style={backgroundStyles} 
-                    className="button" 
+                <button
+                    id="new-quote"
+                    style={backgroundStyles}
+                    className="button"
                     onClick={handleBtnClick}
                 >New Quote</button>
             </div>
@@ -100,7 +99,7 @@ const backgroundStyles = {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
